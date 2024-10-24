@@ -1,22 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+/* Font Imports */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/lovelo");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Font Variables */
+  --primaryFont: "League Spartan", sans-serif;
+  --secondaryFont: "Lovelo", sans-serif;
+  --secondaryFontPoppins: "Poppins", sans-serif;
+  /* Color Variables */
+  --primaryColor: #1c75bc;
+  --secondaryColor: #0b334f;
+  --lightBlueColor: #82c5d6;
+  --turquoiseColor: #2594a9;
+  --whiteColor: #fffff;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
+  font-family: var(--primaryFont);
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* START: General styles */
 .max-width {
-  @apply max-w-[1440px] mx-auto;
-}
-.text-black-100 {
-  color: #2b2c35;
+  @apply max-w-[1660px] mx-auto;
 }
 
 .padding-x {
@@ -27,14 +41,9 @@
   @apply py-4;
 }
 
-.flex-center {
-  @apply flex items-center justify-center;
+.custom-border {
+  @apply border border-solid;
 }
-
-.flex-between {
-  @apply flex justify-between items-center;
-}
-
 .custom-btn {
   @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
 }
