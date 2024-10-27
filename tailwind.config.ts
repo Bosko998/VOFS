@@ -14,16 +14,15 @@ const config: Config = {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
-        "black-100": "#2B2C35",
-        "primary-blue": {
-          DEFAULT: "#2B59FF",
-          100: "#F5F8FF",
-        },
-        "secondary-orange": "#f79761",
-        "light-white": {
-          DEFAULT: "rgba(59,60,152,0.03)",
-          100: "rgba(59,60,152,0.02)",
-        },
+        // Primary color
+        "default-blue": "#1C75BC",
+        //default: "#2B59FF", //I like this one!
+        // Secondary color
+        "secondary-blue": "#0B334F",
+        "light-blue": "#82C5D6",
+        turquoise: "#2594A9",
+        alternative: "#F5F8FF",
+        "main-orange": "#f79761",
         grey: "#747A88",
       },
     },
