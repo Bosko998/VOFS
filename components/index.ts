@@ -1,5 +1,4 @@
-import CustomButton from "./CustomButton";
-import Footer from "./Footer";
-import Hero from "./Hero";
-import Navbar from "./NavBar";
-export { CustomButton, Footer, Hero, Navbar };
+export { default as NavBar } from "./NavBar";
+export { default as Footer } from "./Footer";
+export { default as CustomButton } from "./CustomButton";
+export { default as Hero } from "./Hero";

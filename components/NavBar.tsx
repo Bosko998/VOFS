@@ -1,11 +1,16 @@
-import React from "react";
-function NavBar() {
+import { fetchStory } from "@utils/api";
+const NavBar = async () => {
+  const { content } = await fetchStory("navbar");
+  const { columns } = content.body[0];
+  const { picture } = columns[0];
+  console.log(picture.filename);
   return (
     <div className="max-w-[1140px] mx-auto">
       <div className="flex justify-between items-center px-4">
         <a href="/">
           <img
-            src="/alternative_logo.png"
+            //src="/alternative_logo.png"
+            src={picture.filename}
             alt="logo image"
             className="w-[130px] max-w-full object-cover" //w-[130px] md:w-[150px] lg:w-[180px] max-w-full object-cover
           />
@@ -29,6 +34,6 @@ function NavBar() {
       </div>
     </div>
   );
-}
+};
 
 export default NavBar;
