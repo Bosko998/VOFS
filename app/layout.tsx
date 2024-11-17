@@ -1,18 +1,30 @@
 import type { Metadata } from "next";
-//import localFont from "next/font/local";
 import "./globals.css";
 import { NavBar, Footer } from "components";
+import { Page, Grid, Feature, Teaser, Testimonial } from "components";
+import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 
-// const geistSans = ({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+const cachedFetch = (input: any, init?: any): Promise<Response> => {
+  return fetch(input, {
+    ...init,
+    cache: "no-store",
+  });
+};
+// Initialize Storyblok
+storyblokInit({
+  accessToken: process.env.STORYBLOK_TOKEN,
+  use: [apiPlugin],
+  components: {
+    feature: Feature,
+    grid: Grid,
+    page: Page,
+    teaser: Teaser,
+    testimonial: Testimonial,
+  },
+  apiOptions: {
+    fetch: cachedFetch,
+  },
+});
 
 export const metadata: Metadata = {
   title: "Vofs website",
@@ -21,19 +33,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
         className="bg-default-blue text-white"
         suppressHydrationWarning={true}
-        //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar />
+        {/* <NavBar /> */}
         {children}
-        <Footer />
+
+        {/* <Footer /> */}
       </body>
     </html>
   );
