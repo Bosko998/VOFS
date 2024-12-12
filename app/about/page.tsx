@@ -18,5 +18,7 @@
 //     </div>
 //   );
 // };
-
-// export default AboutPage;
+const AboutPage = async () => {
+  return <div>Hello</div>;
+};
+export default AboutPage;
