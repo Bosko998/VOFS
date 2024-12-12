@@ -1,5 +1,4 @@
 import { Button } from "@headlessui/react";
-import { useState } from "react";
 function Hero() {
   const number = [1, 2, 3, 4];
 

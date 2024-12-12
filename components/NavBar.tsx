@@ -1,5 +1,4 @@
 import type { SbBlokData } from "@storyblok/react";
-
 import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
 interface NavbarProps {
   blok: {
