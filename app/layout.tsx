@@ -14,8 +14,10 @@ import {
   Projects,
 } from "components";
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
-
-const cachedFetch = (input: any, init?: any): Promise<Response> => {
+const cachedFetch = (
+  input: string | Request | URL,
+  init?: RequestInit
+): Promise<Response> => {
   return fetch(input, {
     ...init,
     cache: "no-store",
