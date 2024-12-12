@@ -1,6 +1,6 @@
 import React from "react";
 import type { SbBlokData } from "@storyblok/react";
-import { storyblokEditable } from "@storyblok/react";
+//import { storyblokEditable } from "@storyblok/react";
 
 // Extend SbBlokData to include specific fields
 type MenuLinkBlok = SbBlokData & {
