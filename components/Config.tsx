@@ -1,5 +1,5 @@
 import type { SbBlokData } from "@storyblok/react";
-import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
+import { StoryblokComponent } from "@storyblok/react";
 import { fetchConfig } from "../utils/api";
 
 const Config = async () => {
