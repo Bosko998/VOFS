@@ -1,26 +1,44 @@
-const NavBar = async () => {
+import type { SbBlokData } from "@storyblok/react";
+
+import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
+interface NavbarProps {
+  blok: {
+    Logo: {
+      filename: string;
+    };
+    Bell: {
+      filename: string;
+    };
+    _uid: string;
+    header_menu: SbBlokData[];
+  };
+}
+const NavBar = async ({ blok }: NavbarProps) => {
   return (
-    <div className="max-w-[1140px] mx-auto">
+    <>
       <div className="flex justify-between items-center px-4">
         <a href="/">
           <img
-            src="/alternative_logo.png"
+            src={blok.Logo.filename}
             alt="logo image"
             className="w-[130px] max-w-full object-cover"
           />
         </a>
-        <div className="flex justify-center items-center gap-2 uppercase text-white">
-          <svg
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#ffffff"
-          >
-            <path d="M80-560q0-100 44.5-183.5T244-882l47 64q-60 44-95.5 111T160-560H80Zm720 0q0-80-35.5-147T669-818l47-64q75 55 119.5 138.5T880-560h-80ZM160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
-          </svg>
+
+        <div
+          {...storyblokEditable(blok)}
+          key={blok._uid}
+          data-test="grid"
+          className="flex justify-center items-center gap-2 uppercase text-white"
+        >
+          {(blok.header_menu as SbBlokData[]).map((nestedBlok, index) => (
+            <StoryblokComponent blok={nestedBlok} key={index} />
+          ))}
         </div>
+        <img src={blok.Bell.filename} alt="logo image" />
       </div>
-    </div>
+    </>
   );
 };
+
 export default NavBar;

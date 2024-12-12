@@ -6,3 +6,7 @@ export { default as Grid } from "./Grid";
 export { default as Teaser } from "./Teaser";
 export { default as Feature } from "./Feature";
 export { default as Testimonial } from "./Testimonial";
+export { default as MenuLink } from "./MenuLink";
+export { default as Config } from "./Config";
+export { default as Hero } from "./Hero";
+export { default as Projects } from "./Projects";
