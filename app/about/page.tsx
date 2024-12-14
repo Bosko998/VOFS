@@ -18,7 +18,7 @@
 //     </div>
 //   );
 // };
-const AboutPage = async () => {
-  return <div>Hello</div>;
+export default async function AboutPage(){
+  return <div>Hello</div>
 };
-export default AboutPage;
+

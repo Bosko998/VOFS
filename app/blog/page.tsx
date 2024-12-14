@@ -1,10 +1,8 @@
-import React from "react";
-
-function Blog() {
+export default async function Blog() {
   return <div>Blog Post</div>;
 }
 
-export default Blog;
+
 /**
  import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 type BlogProps = {
