@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 import { getStoryblokApi, StoryblokStory } from "@storyblok/react/rsc";
 type BlogProps = {
   params: {
@@ -11,7 +10,9 @@ const fetchBlogPage = async (slug: string) => {
   return response.data;
 };
 
-export default async function Blog(props: BlogProps) {
+const Blog = async (props: BlogProps) => {
   const story = await fetchBlogPage(props.params.slug);
   return <StoryblokStory story={story} />;
-}
+};
+
+export default Blog;

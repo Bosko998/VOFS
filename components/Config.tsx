@@ -6,7 +6,7 @@ const Config = async () => {
   const { data } = await fetchConfig();
 
   return (
-    <div>
+    <div className="sticky top-0 overflow-hidden bg-default-blue">
       {data.story.content.header_menu.map((blok: SbBlokData) => (
         <StoryblokComponent blok={blok} key={blok._uid} />
       ))}
