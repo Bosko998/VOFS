@@ -1,6 +1,6 @@
 import React from "react";
-import type { SbBlokData } from "@storyblok/react";
-import { storyblokEditable } from "@storyblok/react";
+import type { SbBlokData } from "@storyblok/react/rsc";
+import { storyblokEditable } from "@storyblok/react/rsc";
 
 interface TeaserProps {
   blok: SbBlokData;

@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         // Primary color
-        "default-blue": "#1C75BC",
+        "default-blue": "#051d40",//"#1C75BC",
         //default: "#2B59FF", //I like this one!
         // Secondary color
         "secondary-blue": "#0B334F",

@@ -1,6 +1,6 @@
 import React from "react";
-import type { SbBlokData } from "@storyblok/react";
-import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
+import type { SbBlokData } from "@storyblok/react/rsc";
+import { StoryblokComponent, storyblokEditable } from "@storyblok/react/rsc";
 
 interface GridProps {
   blok: SbBlokData;
