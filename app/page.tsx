@@ -4,7 +4,7 @@ import { SbBlokData } from "@storyblok/react";
 import { fetchData } from "../utils/api";
 import { notFound } from "next/navigation";
 export default async function Home() {
-  const { data } = await fetchData();
+  const { data } = await fetchData("home");
 
   if (!data?.story) {
     notFound();
