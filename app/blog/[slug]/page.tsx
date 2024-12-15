@@ -10,9 +10,7 @@ const fetchBlogPage = async (slug: string) => {
   return response.data;
 };
 
-const Blog = async (props: BlogProps) => {
+export default async function Blog(props: BlogProps) {
   const story = await fetchBlogPage(props.params.slug);
   return <StoryblokStory story={story} />;
-};
-
-export default Blog;
+}
