@@ -1,16 +1,12 @@
 export const dynamic = "force-dynamic";
-import { StoryblokComponent, getStoryblokApi } from "@storyblok/react/rsc";
-import { SbBlokData } from "@storyblok/react";
-export async function fetchData() {
-  const sbParams: SbBlokData = { version: "draft" };
-
-  const storyblokApi = getStoryblokApi();
-  const response = await storyblokApi.get(`cdn/stories/about`, sbParams);
-
-  return response;
-}
+import { StoryblokComponent, SbBlokData } from "@storyblok/react/rsc";
+import { notFound } from "next/navigation";
+import { fetchData } from "../../utils/api";
 export default async function AboutPage() {
-  const { data } = await fetchData();
+  const { data } = await fetchData("about");
+  if (!data?.story) {
+    notFound();
+  }
   return (
     <div>
       {data.story.content.blocks.map((blok: SbBlokData) => (
