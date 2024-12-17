@@ -1,7 +1,13 @@
-import React from "react";
+import Carousel from './Carousel'
 
 function Projects() {
-  return <div className="padding-y max-w-[1140px] m-auto">Projects</div>;
+  return(
+    <section>
+      <div className="flex justify-center items-center mb-4 mt-4">
+        <Carousel/>
+      </div>
+    </section>
+  );
 }
 
 export default Projects;

@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -25,6 +26,17 @@ const config: Config = {
         "main-orange": "#f79761",
         grey: "#747A88",
       },
+      animation:{
+        breathing: 'breathing 2s ease-in-out infinite'
+      },
+      keyframes: {
+        breathing:{
+          '0%': {transform:'scale(0.9)'},  
+          '25%':{transform:'scale(1.25)'},
+          '60%': {transform:'scale(0.9)'},
+          '100%': {transform:'scale(0.9)'},
+        },
+      }
     },
   },
   plugins: [],
