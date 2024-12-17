@@ -3,7 +3,7 @@ function Hero() {
   const number = [1, 2, 3, 4];
 
   return (
-    <section className="hero-img bg-no-repeat h-screen bg-cover">
+    <section className="hero-img bg-no-repeat h-screen bg-cover mt-8 mb-8">
       <div className="padding-y max-w-[1140px] m-auto">
         <h1 className="text-3xl max-w-[1/3] pt-8 pb-8">
           Dokazi svoj potencijal, budi deo VOFS-a!
