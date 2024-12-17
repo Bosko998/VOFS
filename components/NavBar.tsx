@@ -28,7 +28,7 @@ const NavBar = async ({ blok }: NavbarProps) => {
           {...storyblokEditable(blok)}
           key={blok._uid}
           data-test="grid"
-          className="flex justify-center items-center gap-2 uppercase text-white"
+          className="flex justify-center items-center gap-8 uppercase text-white"
         >
           {(blok.header_menu as SbBlokData[]).map((nestedBlok, index) => (
             <StoryblokComponent blok={nestedBlok} key={index} />
