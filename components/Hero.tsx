@@ -1,12 +1,24 @@
 import { Button } from "@headlessui/react";
-function Hero() {
+import { storyblokEditable } from "@storyblok/react/rsc";
+type HeroProps = {
+  blok:{
+    _uid:string
+    headline:string
+    buttonContent:string
+    backgroundPic:{
+      filename:string
+    }
+  };
+ 
+}
+function Hero({blok}:HeroProps) {
   const number = [1, 2, 3, 4];
 
   return (
-    <section className="hero-img bg-no-repeat h-screen bg-cover mt-8 mb-8">
-      <div className="padding-y max-w-[1140px] m-auto">
+    <section style={{'backgroundImage': `url(${blok.backgroundPic.filename})`}}  className="bg-no-repeat h-screen bg-cover mt-8 mb-8">
+      <div className="padding-y max-w-[1140px] m-auto" {...storyblokEditable(blok)} key={blok._uid} data-test="hero">
         <h1 className="text-3xl max-w-[1/3] pt-8 pb-8">
-          Dokazi svoj potencijal, budi deo VOFS-a!
+         {blok.headline}
         </h1>
         <div className="flex flex-col gap-8">
           <div className="flex flex-row gap-8">
@@ -24,7 +36,7 @@ function Hero() {
               </div>
             ))}
           </div>
-          <Button className="custom-btn">O nama</Button>
+          <Button className="custom-btn">{blok.buttonContent}</Button>
         </div>
       </div>
     </section>
